@@ -3,5 +3,9 @@
 const greet = module.exports = {};
 
 greet.sayHello = (name) => {
-    return `Hello ${name}`;
+    if(typeof name === 'string') {
+        return `hello ${name}`;
+    }else {
+        return null;
+    }
 };
