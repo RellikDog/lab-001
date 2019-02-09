@@ -17,10 +17,11 @@ describe('#greet.test.js', () => {
 
 describe('#sum.test.js', () => {
     test('test sum with proper inputs', () => {
-        expect(arithmetic.sum(2, 2)).toEqual(4);
+        let arr = [1, [], 2, 'four', 3, true];
+        expect(arithmetic.sum(arr)).toEqual(6);
     });
     test('test sum with improper inputs', () => {
-        expect(arithmetic.sum(1, isNaN())).toBeFalsy();
+        expect(arithmetic.sum(6)).toBeFalsy();
     });
 });
 describe('#subtract.test.js', () => {
@@ -33,10 +34,12 @@ describe('#subtract.test.js', () => {
 });
 describe('#multiply.test.js', () => {
     test('test multiply with proper inputs', () => {
-        expect(arithmetic.multi(3, 3)).toEqual(9);
+        let arr = [2, true, 'iloveyou', 4, 3];
+        expect(arithmetic.multi(arr)).toEqual(24);
     });
     test('test multiply with improper inputs', () => {
-        expect(arithmetic.multi(1,  isNaN())).toBeFalsy();
+        let arr2 = {};
+        expect(arithmetic.multi(arr2)).toBeFalsy();
     });
 });
 describe('#divide.test.js', () => {
@@ -44,7 +47,7 @@ describe('#divide.test.js', () => {
         expect(arithmetic.divide(10, 2)).toEqual(5);
     });
     test('test if divide is passed 0', () => {
-        expect(arithmetic.divide(4, 0)).toBeFalsy();
+        expect(arithmetic.divide(4, 0)).toEqual('Cannot divide by zero');
     });
     test('test multiply with improper inputs', () => {
         expect(arithmetic.multi(10,  isNaN())).toBeFalsy();
